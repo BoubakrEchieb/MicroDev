@@ -13,10 +13,11 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import chess.microdev.devfest.tn.chess.game.pieces.Board;
 
 public class BoardActivity extends AppCompatActivity {
 
-    private Map<String,Integer> cases = new HashMap<>() ;
+    private Map<String,Integer> cases = new HashMap<>();
     @InjectView(R.id.board)
     GridLayout board;
     @Override
@@ -32,8 +33,13 @@ public class BoardActivity extends AppCompatActivity {
                 .setAction("Action", null).show());
         intHashmap();
 
+
+
     }
 
+    private void drawPieces(Board board){
+
+    }
     private void intHashmap() {
         //row 1
         cases.put("a_1",R.id.a_1);
