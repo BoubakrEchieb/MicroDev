@@ -64,9 +64,64 @@ public class BoardActivity extends AppCompatActivity {
         cases.put("d_3",R.id.d_3);
         cases.put("e_3",R.id.e_3);
         cases.put("f_3",R.id.f_3);
-        cases.put("g_3",R.id.g_2);
-        cases.put("h_3",R.id.h_2);
+        cases.put("g_3",R.id.g_3);
+        cases.put("h_3",R.id.h_3);
         //end row 3
+
+        //row 4
+        cases.put("a_4",R.id.a_4);
+        cases.put("b_4",R.id.b_4);
+        cases.put("c_4",R.id.c_4);
+        cases.put("d_4",R.id.d_4);
+        cases.put("e_4",R.id.e_4);
+        cases.put("f_4",R.id.f_4);
+        cases.put("g_4",R.id.g_4);
+        cases.put("h_4",R.id.h_4);
+        //end row 4
+
+        //row 5
+        cases.put("a_5",R.id.a_5);
+        cases.put("b_5",R.id.b_5);
+        cases.put("c_5",R.id.c_5);
+        cases.put("d_5",R.id.d_5);
+        cases.put("e_5",R.id.e_5);
+        cases.put("f_5",R.id.f_5);
+        cases.put("g_5",R.id.g_5);
+        cases.put("h_5",R.id.h_5);
+        //end row 5
+
+        //row 6
+        cases.put("a_6",R.id.a_6);
+        cases.put("b_6",R.id.b_6);
+        cases.put("c_6",R.id.c_6);
+        cases.put("d_6",R.id.d_6);
+        cases.put("e_6",R.id.e_6);
+        cases.put("f_6",R.id.f_6);
+        cases.put("g_6",R.id.g_6);
+        cases.put("h_6",R.id.h_6);
+        //end row 6
+
+        //row 7
+        cases.put("a_7",R.id.a_7);
+        cases.put("b_7",R.id.b_7);
+        cases.put("c_7",R.id.c_7);
+        cases.put("d_7",R.id.d_7);
+        cases.put("e_7",R.id.e_7);
+        cases.put("f_7",R.id.f_7);
+        cases.put("g_7",R.id.g_7);
+        cases.put("h_7",R.id.h_7);
+        //end row 7
+
+        //row 8
+        cases.put("a_8",R.id.a_8);
+        cases.put("b_8",R.id.b_8);
+        cases.put("c_8",R.id.c_8);
+        cases.put("d_8",R.id.d_8);
+        cases.put("e_8",R.id.e_8);
+        cases.put("f_8",R.id.f_8);
+        cases.put("g_8",R.id.g_8);
+        cases.put("h_8",R.id.h_8);
+        //end row 7
     }
 
 }
