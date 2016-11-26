@@ -29,4 +29,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //annotation
     compile 'com.jakewharton:butterknife:6.1.0'
+
+    // RecyclerView
+    compile 'com.android.support:recyclerview-v7:23.3.+'
+
+    // CardView
+    compile 'com.android.support:cardview-v7:23.3.+'
 }
