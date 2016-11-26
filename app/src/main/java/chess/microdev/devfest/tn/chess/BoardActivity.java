@@ -28,13 +28,8 @@ public class BoardActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
         intHashmap();
 
     }
@@ -65,7 +60,7 @@ public class BoardActivity extends AppCompatActivity {
         //row 3
         cases.put("a_3",R.id.a_3);
         cases.put("b_3",R.id.b_3);
-        cases.put("c_3",R.id.c_2);
+        cases.put("c_3",R.id.c_3);
         cases.put("d_3",R.id.d_2);
         cases.put("e_3",R.id.e_2);
         cases.put("f_3",R.id.f_2);
