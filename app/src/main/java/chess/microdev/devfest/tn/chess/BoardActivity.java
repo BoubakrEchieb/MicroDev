@@ -61,9 +61,9 @@ public class BoardActivity extends AppCompatActivity {
         cases.put("a_3",R.id.a_3);
         cases.put("b_3",R.id.b_3);
         cases.put("c_3",R.id.c_3);
-        cases.put("d_3",R.id.d_2);
-        cases.put("e_3",R.id.e_2);
-        cases.put("f_3",R.id.f_2);
+        cases.put("d_3",R.id.d_3);
+        cases.put("e_3",R.id.e_3);
+        cases.put("f_3",R.id.f_3);
         cases.put("g_3",R.id.g_2);
         cases.put("h_3",R.id.h_2);
         //end row 3
