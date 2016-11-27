@@ -1,5 +1,6 @@
 package chess.microdev.devfest.tn.chess;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,15 +8,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import chess.microdev.devfest.tn.chess.game.pieces.Board;
+import chess.microdev.devfest.tn.chess.game.pieces.Piece;
 
 public class BoardActivity extends AppCompatActivity {
+
+    private static final int PAWN= 0;
+    private static final int ROOK= 1;
+    private static final int KNIGHT= 2;
+    private static final int BISHOP= 3;
+    private static final int QuEEN= 4;
+    private static final int KING= 5;
+
 
     private Map<String,Integer> cases = new HashMap<>();
     @InjectView(R.id.board)
@@ -31,14 +43,66 @@ public class BoardActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
+
         intHashmap();
 
-
-
+        Intent intent = getIntent();
+        Board board = (Board) intent.getSerializableExtra("board");
     }
 
     private void drawPieces(Board board){
-
+        ArrayList<Piece> whitePieces = board.getWhitePieces();
+        ArrayList<Piece> blackPieces =  board.getBlackPieces();
+        for(int i = 0 ; i< whitePieces.size() ; i++){
+            String position = whitePieces.get(i).getSquare().toString();
+            ImageView carree = (ImageView) findViewById(cases.get(position));
+            carree.setImageDrawable(null);
+            switch (whitePieces.get(i).getTypeNumber()){
+                case (PAWN):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.p_w));
+                    break;
+                case (ROOK):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.r_w));
+                    break;
+                case (KNIGHT):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
+                    break;
+                case (BISHOP):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.b_w));
+                    break;
+                case (QuEEN):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.q_w));
+                    break;
+                case (KING):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
+                    break;
+            }
+        }
+        for(int i = 0 ; i< blackPieces.size() ; i++){
+            String position = blackPieces.get(i).getSquare().toString();
+            ImageView carree = (ImageView) findViewById(cases.get(position));
+            carree.setImageDrawable(null);
+            switch (whitePieces.get(i).getTypeNumber()){
+                case (PAWN):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.p_b));
+                    break;
+                case (ROOK):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.r_b));
+                    break;
+                case (KNIGHT):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
+                    break;
+                case (BISHOP):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.b_b));
+                    break;
+                case (QuEEN):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.q_b));
+                    break;
+                case (KING):
+                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
+                    break;
+            }
+        }
     }
     private void intHashmap() {
         //row 1
