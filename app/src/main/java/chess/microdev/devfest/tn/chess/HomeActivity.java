@@ -16,16 +16,22 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private static final String TAG = "HomeActivity";
     private DrawerLayout mDrawerLayout;
+    private TextView accountUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +68,10 @@ public class HomeActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        Bundle bandle = getIntent().getExtras();
+        String email = (String) bandle.get("email");
+        Log.d(TAG,email);
+        accountUsername.setText(email);
     }
 
     @Override
