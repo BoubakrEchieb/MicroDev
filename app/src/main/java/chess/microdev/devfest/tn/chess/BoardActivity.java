@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +33,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private static final int QuEEN= 4;
     private static final int KING= 5;
 
-
+    private AdView mAdView;
     private Map<String,Integer> cases = new HashMap<>();
     /*@InjectView(R.id.board)
     GridLayout board;*/
@@ -40,6 +43,10 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
         ButterKnife.inject(this);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -22,6 +22,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,13 +33,19 @@ public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
     private DrawerLayout mDrawerLayout;
     private TextView accountUsername;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        accountUsername= (TextView) findViewById(R.id.account_username);
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+       // accountUsername= (TextView) findViewById(R.id.account_username);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -70,7 +79,7 @@ public class HomeActivity extends AppCompatActivity {
         Bundle bandle = getIntent().getExtras();
         String email = (String) bandle.get("email");
         Log.d(TAG,email);
-        accountUsername.setText(email);
+        accountUsername.setText("boubakr.echieb");
     }
 
     @Override
@@ -148,6 +157,32 @@ public class HomeActivity extends AppCompatActivity {
                 });
     }
 
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
+    }
+
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
         private final List<String> mFragmentTitles = new ArrayList<>();
@@ -160,6 +195,8 @@ public class HomeActivity extends AppCompatActivity {
             mFragments.add(fragment);
             mFragmentTitles.add(title);
         }
+
+
 
         @Override
         public Fragment getItem(int position) {
