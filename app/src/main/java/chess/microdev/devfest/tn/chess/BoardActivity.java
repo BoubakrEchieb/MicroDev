@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import chess.microdev.devfest.tn.chess.game.pieces.Board;
 import chess.microdev.devfest.tn.chess.game.pieces.Piece;
+import chess.microdev.devfest.tn.chess.game.pieces.Square;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -50,8 +51,9 @@ public class BoardActivity extends AppCompatActivity {
         Board board = (Board) intent.getSerializableExtra("board");
     }
 
-    private void drawPieces(Board board){
-        ArrayList<Piece> whitePieces = board.getWhitePieces();
+    private void drawPieces(Board board)
+    {
+        /*ArrayList<Piece> whitePieces = board.getWhitePieces();
         ArrayList<Piece> blackPieces =  board.getBlackPieces();
         for(int i = 0 ; i< whitePieces.size() ; i++){
             String position = whitePieces.get(i).getSquare().toString();
@@ -101,6 +103,82 @@ public class BoardActivity extends AppCompatActivity {
                 case (KING):
                     carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
                     break;
+            }
+        }*/
+        Square [][]squares=board.getBoard();
+        for (int i=0;i<board.SIZE;i++)
+        {
+            for (int j=0;j<board.SIZE;j++)
+            {
+                String position = squares[i][j].toString();
+                ImageView carree = (ImageView) findViewById(cases.get(position));
+                carree.setImageDrawable(null);
+                if (squares[i][j].getColor())
+                {
+                    carree.setBackgroundColor(getResources().getColor(R.color.board_anti_case_color));
+                }
+                else
+                {
+                    carree.setBackgroundColor(getResources().getColor(R.color.board_case_color));
+                }
+
+                if (!squares[i][j].isEmpty())
+                {
+                    Piece p = squares[i][j].getPiece();
+                    if(p.isWhite())
+                    {
+                        switch (p.getTypeNumber()){
+                            case (PAWN):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.p_w));
+                                break;
+                            case (ROOK):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.r_w));
+                                break;
+                            case (KNIGHT):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
+                                break;
+                            case (BISHOP):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.b_w));
+                                break;
+                            case (QuEEN):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.q_w));
+                                break;
+                            case (KING):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (p.getTypeNumber()){
+                            case (PAWN):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.p_b));
+                                break;
+                            case (ROOK):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.r_b));
+                                break;
+                            case (KNIGHT):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
+                                break;
+                            case (BISHOP):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.b_b));
+                                break;
+                            case (QuEEN):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.q_b));
+                                break;
+                            case (KING):
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
+                                break;
+                        }
+                    }
+
+
+
+                }
+                if (squares[i][j].isSelected())
+                {
+                    carree.setBackgroundColor(getResources().getColor(R.color.board_selected_case_color));
+                }
             }
         }
     }
