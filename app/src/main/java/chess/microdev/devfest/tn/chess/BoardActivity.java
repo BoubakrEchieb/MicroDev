@@ -2,16 +2,30 @@ package chess.microdev.devfest.tn.chess;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
+import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,10 +48,21 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private static final int KING= 5;
 
     private AdView mAdView;
+
+    // Firebase instance variables
+    private DatabaseReference mFirebaseDatabaseReference;
+
+
     private Map<String,Integer> cases = new HashMap<>();
     /*@InjectView(R.id.board)
     GridLayout board;*/
     private Board board;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private String TAG="BoardActivity";
+    private String gamekey;
+    private String last;
+    private String key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,62 +85,82 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         Board board = (Board) intent.getSerializableExtra("board");*/
         board = new Board();
         drawPieces(board);
+        last="000";
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        Firebase.setAndroidContext(this);
+        DatabaseReference reqRef = FirebaseDatabase.getInstance().getReference("requests");
+        reqRef.push();
+        DatabaseReference matchRef = FirebaseDatabase.getInstance().getReference("games");
+        key="match";
+        Map<String,String> a = new HashMap<String,String>();
+        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference("games/"+key+"/moves/moves");
+
+
+        mRef.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+               /* for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+
+
+                    for(int i = 0 ; i < board.SIZE ; i++){
+                        for(int j = 0 ; j < board.SIZE ; j++){
+                            Square ss = BoardActivity.this.board.getBoard()[i][j];
+                            if(ss.toString().equals(dataSnapshot.getValue())){
+                                ss.select();
+                                drawPieces(board);
+
+
+
+                            }
+
+                        }
+                    }
+                }*/
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                String a=dataSnapshot.getValue().toString();
+                for(int i = 0 ; i < board.SIZE ; i++){
+                    for(int j = 0 ; j < board.SIZE ; j++){
+                        Square ss = BoardActivity.this.board.getBoard()[i][j];
+                        if(ss.toString().equals(a)){
+                            ss.select();
+                            drawPieces(board);
+                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getMessage());
+            }
+        });
+        /*ref.child("games").child(key).child("uidwhite").setValue("&122");
+        ref.child("games").child(key).child("finished").setValue(Boolean.FALSE);*/
+
+
+
+
     }
 
     private void drawPieces(Board board)
     {
-        /*ArrayList<Piece> whitePieces = board.getWhitePieces();
-        ArrayList<Piece> blackPieces =  board.getBlackPieces();
-        for(int i = 0 ; i< whitePieces.size() ; i++){
-            String position = whitePieces.get(i).getSquare().toString();
-            ImageView carree = (ImageView) findViewById(cases.get(position));
-            carree.setImageDrawable(null);
-            switch (whitePieces.get(i).getTypeNumber()){
-                case (PAWN):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.p_w));
-                    break;
-                case (ROOK):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.r_w));
-                    break;
-                case (KNIGHT):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
-                    break;
-                case (BISHOP):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.b_w));
-                    break;
-                case (QuEEN):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.q_w));
-                    break;
-                case (KING):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
-                    break;
-            }
-        }
-        for(int i = 0 ; i< blackPieces.size() ; i++){
-            String position = blackPieces.get(i).getSquare().toString();
-            ImageView carree = (ImageView) findViewById(cases.get(position));
-            carree.setImageDrawable(null);
-            switch (whitePieces.get(i).getTypeNumber()){
-                case (PAWN):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.p_b));
-                    break;
-                case (ROOK):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.r_b));
-                    break;
-                case (KNIGHT):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
-                    break;
-                case (BISHOP):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.b_b));
-                    break;
-                case (QuEEN):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.q_b));
-                    break;
-                case (KING):
-                    carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
-                    break;
-            }
-        }*/
+
         Square [][]squares=board.getBoard();
         for (int i=0;i<board.SIZE;i++)
         {
@@ -295,10 +340,15 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             for(int j = 0 ; j < board.SIZE ; j++){
                 Square s = board.getBoard()[i][j];
                 if(cases.get(s.toString()).equals(view.getId())){
-                    s.select();
-                    drawPieces(board);
+
+
+                    DatabaseReference reqRef = FirebaseDatabase.getInstance().getReference("games/"+key+"/moves");
+
+                    reqRef.child("moves").child("move").setValue(s.toString());
                 }
+
             }
         }
+
     }
 }
