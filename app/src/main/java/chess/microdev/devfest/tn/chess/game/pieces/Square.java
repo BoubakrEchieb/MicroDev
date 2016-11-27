@@ -23,7 +23,7 @@ public class Square {
         return (ROW + COLUMN) % 2 == 1;
     }
 
-    private void select()
+    public void select()
     {
         if (piece != null) {
             if ((board.getTurn() && !piece.isWhite()) || (!board.getTurn() && piece.isWhite()) && !selected) {
