@@ -139,7 +139,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                                 carree.setImageDrawable(getResources().getDrawable(R.drawable.r_w));
                                 break;
                             case (KNIGHT):
-                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_w));
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.n_w));
                                 break;
                             case (BISHOP):
                                 carree.setImageDrawable(getResources().getDrawable(R.drawable.b_w));
@@ -162,7 +162,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                                 carree.setImageDrawable(getResources().getDrawable(R.drawable.r_b));
                                 break;
                             case (KNIGHT):
-                                carree.setImageDrawable(getResources().getDrawable(R.drawable.k_b));
+                                carree.setImageDrawable(getResources().getDrawable(R.drawable.n_b));
                                 break;
                             case (BISHOP):
                                 carree.setImageDrawable(getResources().getDrawable(R.drawable.b_b));

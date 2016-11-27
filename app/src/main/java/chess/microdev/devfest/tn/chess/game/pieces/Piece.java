@@ -62,6 +62,10 @@ public abstract class Piece implements Serializable{
     public boolean legalMove(Square to) {
         return to.getPiece() == null || isOpponent(to.getPiece());
     }
+    public void removeCheck()
+    {
+
+    }
 
     public abstract Collection<Square> getPossibleMoves();
 

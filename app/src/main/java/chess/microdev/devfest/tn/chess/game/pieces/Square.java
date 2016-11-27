@@ -2,6 +2,9 @@
 package chess.microdev.devfest.tn.chess.game.pieces;
 
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.util.Collection;
 
 public class Square {
@@ -25,24 +28,28 @@ public class Square {
 
     public void select()
     {
+        Log.i("Case : ",""+ROW+" "+COLUMN);
         if (piece != null)
         {
+
             if ((board.getTurn() && !piece.isWhite()) || (!board.getTurn() && piece.isWhite()) && !selected) {
                 if (piece.getTypeNumber() == 5 || !board.kingInCheck()) {
                     if (board.getSelected() != null && !board.getSelected().isEmpty())
                     {
                         //board.getSelected().getPiece().getPossibleMoves().stream().forEach((item) -> {item.deselect();});
-                        Square[] coll= (Square[]) board.getSelected().getPiece().getPossibleMoves().toArray();
+                        Object[] coll=board.getSelected().getPiece().getPossibleMoves().toArray();
                         for (int i=0;i<coll.length;i++)
                         {
-                            coll[i].deselect();
+                            ((Square)coll[i]).deselect();
                         }
                     }
                     board.deselect();
                     board.setSelected(this);
+                    this.piece.generatePossibleMoves();
                     selected = true;
                 } else {
                     if (board.getReminder() > 1) {
+                        Log.i("King : ","check");
                         board.resetReminder();
                     }
                 }
@@ -54,10 +61,10 @@ public class Square {
                         Square to = this;
                         if (from.getPiece() != null) {
                             //from.getPiece().getPossibleMoves().stream().forEach((square) -> {square.deselect();});
-                            Square[] coll= (Square[]) from.getPiece().getPossibleMoves().toArray();
+                            Object[] coll=  from.getPiece().getPossibleMoves().toArray();
                             for (int i=0;i<coll.length;i++)
                             {
-                                coll[i].deselect();
+                                ((Square)coll[i]).deselect();
                             }
                         }
                         board.move(from, to);
@@ -72,15 +79,19 @@ public class Square {
                     //Natural move
                     Square from = board.getSelected();
                     Square to = this;
-                    from.getPiece().getPossibleMoves().stream().forEach((square) -> {
-                        square.deselect();
-                    });
+
+                    Object[] coll=  from.getPiece().getPossibleMoves().toArray();
+                    for (int i=0;i<coll.length;i++)
+                    {
+                        ((Square)coll[i]).deselect();
+                    }
                     board.move(from, to);
                     board.deselect();
                     board.setSelected(null);
                 }
             }
         }
+
     }
 
     public Board getBoard() {

@@ -49,20 +49,26 @@ class King extends Piece {
                 PieceType.KING.create(getPieceColor())};
             Piece oldKing = this;
             getSquare().removePiece();
-            moves.stream().forEach((kingMove) -> {
+            for(Square kingMove:moves){
                 if (kingMove.isEmpty()) {
                     for (Piece piece : pieces) {
                         piece.putPieceOnSquareFirstTime(kingMove);
                         piece.generatePossibleMoves();
-                        piece.getPossibleMoves().stream().filter((enemy)
-                                -> (possibleMoves.contains(kingMove) && !enemy.isEmpty()
-                                && enemy.getPiece().isOpponent(piece)
-                                && enemy.getPiece().getTypeNumber() == piece.getTypeNumber())).forEach((_item) -> {
-                                    possibleMoves.remove(kingMove);
-                                    if (!inCheck) {
-                                        inCheck = _item.getPiece().generatePossibleMoves().contains(getSquare());
-                                    }
-                                });
+                        Object[] o = piece.getPossibleMoves().toArray();
+                        for(int i=0;i<o.length;i++)
+                        {
+                            Square enemy =(Square)o[i];
+                            if((possibleMoves.contains(kingMove) && !enemy.isEmpty()
+                                    && enemy.getPiece().isOpponent(piece)
+                                    && enemy.getPiece().getTypeNumber() == piece.getTypeNumber()))
+                            {
+                                possibleMoves.remove(kingMove);
+                                if (!inCheck) {
+                                    inCheck = enemy.getPiece().generatePossibleMoves().contains(getSquare());
+                                }
+                            }
+                        }
+
                     }
                     kingMove.removePiece();
                 } else if (isOpponent(kingMove.getPiece())) {
@@ -71,20 +77,26 @@ class King extends Piece {
                         kingMove.removePiece();
                         piece.putPieceOnSquareFirstTime(kingMove);
                         piece.generatePossibleMoves();
-                        piece.getPossibleMoves().stream().filter((enemy)
-                                -> (possibleMoves.contains(kingMove) && !enemy.isEmpty()
-                                && enemy.getPiece().isOpponent(piece)
-                                && enemy.getPiece().getTypeNumber() == piece.getTypeNumber())).forEach((_item) -> {
-                                    possibleMoves.remove(kingMove);
-                                    if (!inCheck) {
-                                        inCheck = _item.getPiece().generatePossibleMoves().contains(getSquare());
-                                    }
-                                });
+                        Object[] o = piece.getPossibleMoves().toArray();
+                        for(int i=0;i<o.length;i++)
+                        {
+                            Square enemy =(Square)o[i];
+                            if((possibleMoves.contains(kingMove) && !enemy.isEmpty()
+                                    && enemy.getPiece().isOpponent(piece)
+                                    && enemy.getPiece().getTypeNumber() == piece.getTypeNumber()))
+                            {
+                                possibleMoves.remove(kingMove);
+                                if (!inCheck) {
+                                    inCheck = enemy.getPiece().generatePossibleMoves().contains(getSquare());
+                                }
+                            }
+                        }
+
                     }
                     kingMove.removePiece();
                     oldPiece.putPieceOnSquareFirstTime(kingMove);
                 }
-            });
+            }
             oldKing.putPieceOnSquareFirstTime(getSquare());
         }
         return possibleMoves;

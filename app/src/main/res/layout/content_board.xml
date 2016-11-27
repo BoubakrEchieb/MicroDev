@@ -33,42 +33,42 @@
 
                 <!--Row 1 -->
                 <ImageView
-                    android:id="@+id/a_1"
+                    android:id="@+id/a_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/b_1"
+                    android:id="@+id/b_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/c_1"
+                    android:id="@+id/c_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/d_1"
+                    android:id="@+id/d_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/e_1"
+                    android:id="@+id/e_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/f_1"
+                    android:id="@+id/f_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/g_1"
+                    android:id="@+id/g_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/h_1"
+                    android:id="@+id/h_8"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
@@ -76,42 +76,42 @@
 
                 <!--Row 2 -->
                 <ImageView
-                    android:id="@+id/a_2"
+                    android:id="@+id/a_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/b_2"
+                    android:id="@+id/b_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/c_2"
+                    android:id="@+id/c_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/d_2"
+                    android:id="@+id/d_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/e_2"
+                    android:id="@+id/e_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/f_2"
+                    android:id="@+id/f_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/g_2"
+                    android:id="@+id/g_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/h_2"
+                    android:id="@+id/h_7"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
@@ -119,42 +119,42 @@
 
                 <!--Row 3 -->
                 <ImageView
-                    android:id="@+id/a_3"
+                    android:id="@+id/a_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/b_3"
+                    android:id="@+id/b_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/c_3"
+                    android:id="@+id/c_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/d_3"
+                    android:id="@+id/d_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/e_3"
+                    android:id="@+id/e_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/f_3"
+                    android:id="@+id/f_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/g_3"
+                    android:id="@+id/g_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/h_3"
+                    android:id="@+id/h_6"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
@@ -162,42 +162,42 @@
 
                 <!--Row 4 -->
                 <ImageView
-                    android:id="@+id/a_4"
+                    android:id="@+id/a_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/b_4"
+                    android:id="@+id/b_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/c_4"
+                    android:id="@+id/c_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/d_4"
+                    android:id="@+id/d_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/e_4"
+                    android:id="@+id/e_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/f_4"
+                    android:id="@+id/f_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/g_4"
+                    android:id="@+id/g_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/h_4"
+                    android:id="@+id/h_5"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
@@ -205,42 +205,42 @@
 
                 <!--Row 5 -->
                 <ImageView
-                    android:id="@+id/a_5"
+                    android:id="@+id/a_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/b_5"
+                    android:id="@+id/b_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/c_5"
+                    android:id="@+id/c_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/d_5"
+                    android:id="@+id/d_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/e_5"
+                    android:id="@+id/e_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/f_5"
+                    android:id="@+id/f_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/g_5"
+                    android:id="@+id/g_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/h_5"
+                    android:id="@+id/h_4"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
@@ -248,42 +248,42 @@
 
                 <!--Row 6 -->
                 <ImageView
-                    android:id="@+id/a_6"
+                    android:id="@+id/a_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/b_6"
+                    android:id="@+id/b_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/c_6"
+                    android:id="@+id/c_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/d_6"
+                    android:id="@+id/d_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/e_6"
+                    android:id="@+id/e_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/f_6"
+                    android:id="@+id/f_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/g_6"
+                    android:id="@+id/g_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/h_6"
+                    android:id="@+id/h_3"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
@@ -291,42 +291,42 @@
 
                 <!--Row 7 -->
                 <ImageView
-                    android:id="@+id/a_7"
+                    android:id="@+id/a_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/b_7"
+                    android:id="@+id/b_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/c_7"
+                    android:id="@+id/c_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/d_7"
+                    android:id="@+id/d_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/e_7"
+                    android:id="@+id/e_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/f_7"
+                    android:id="@+id/f_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/g_7"
+                    android:id="@+id/g_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/h_7"
+                    android:id="@+id/h_2"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
@@ -334,42 +334,42 @@
 
                 <!--Row 8 -->
                 <ImageView
-                    android:id="@+id/a_8"
+                    android:id="@+id/a_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/b_8"
+                    android:id="@+id/b_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/c_8"
+                    android:id="@+id/c_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/d_8"
+                    android:id="@+id/d_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/e_8"
+                    android:id="@+id/e_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/f_8"
+                    android:id="@+id/f_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
                 <ImageView
-                    android:id="@+id/g_8"
+                    android:id="@+id/g_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_anti_case_color"/>
                 <ImageView
-                    android:id="@+id/h_8"
+                    android:id="@+id/h_1"
                     android:layout_width="@dimen/board_case_dim"
                     android:layout_height="@dimen/board_case_dim"
                     android:background="@color/board_case_color"/>
