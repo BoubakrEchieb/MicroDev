@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,7 +21,7 @@ import chess.microdev.devfest.tn.chess.game.pieces.Board;
 import chess.microdev.devfest.tn.chess.game.pieces.Piece;
 import chess.microdev.devfest.tn.chess.game.pieces.Square;
 
-public class BoardActivity extends AppCompatActivity {
+public class BoardActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int PAWN= 0;
     private static final int ROOK= 1;
@@ -31,8 +32,9 @@ public class BoardActivity extends AppCompatActivity {
 
 
     private Map<String,Integer> cases = new HashMap<>();
-    @InjectView(R.id.board)
-    GridLayout board;
+    /*@InjectView(R.id.board)
+    GridLayout board;*/
+    private Board board;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +49,10 @@ public class BoardActivity extends AppCompatActivity {
 
         intHashmap();
 
-        Intent intent = getIntent();
-        Board board = (Board) intent.getSerializableExtra("board");
+        /*Intent intent = getIntent();
+        Board board = (Board) intent.getSerializableExtra("board");*/
+        board = new Board();
+        drawPieces(board);
     }
 
     private void drawPieces(Board board)
@@ -270,6 +274,24 @@ public class BoardActivity extends AppCompatActivity {
         cases.put("g_8",R.id.g_8);
         cases.put("h_8",R.id.h_8);
         //end row 7
+
+        Set<String> keys = cases.keySet();
+        for(String key : keys){
+            ImageView c = (ImageView) findViewById(cases.get(key));
+            c.setOnClickListener(this);
+        }
     }
 
+    @Override
+    public void onClick(View view) {
+        for(int i = 0 ; i < board.SIZE ; i++){
+            for(int j = 0 ; j < board.SIZE ; j++){
+                Square s = board.getBoard()[i][j];
+                if(cases.get(s.toString()).equals(view.getId())){
+                    s.select();
+                    drawPieces(board);
+                }
+            }
+        }
+    }
 }
