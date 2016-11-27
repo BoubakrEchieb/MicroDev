@@ -2,7 +2,7 @@
 package chess.microdev.devfest.tn.chess.game.pieces;
 
 
-
+import java.util.Collection;
 
 public class Square {
 
@@ -25,11 +25,18 @@ public class Square {
 
     private void select()
     {
-        if (piece != null) {
+        if (piece != null)
+        {
             if ((board.getTurn() && !piece.isWhite()) || (!board.getTurn() && piece.isWhite()) && !selected) {
                 if (piece.getTypeNumber() == 5 || !board.kingInCheck()) {
-                    if (board.getSelected() != null && !board.getSelected().isEmpty()) {
-                        board.getSelected().getPiece().getPossibleMoves().stream().forEach((item) -> {item.deselect();});
+                    if (board.getSelected() != null && !board.getSelected().isEmpty())
+                    {
+                        //board.getSelected().getPiece().getPossibleMoves().stream().forEach((item) -> {item.deselect();});
+                        Square[] coll= (Square[]) board.getSelected().getPiece().getPossibleMoves().toArray();
+                        for (int i=0;i<coll.length;i++)
+                        {
+                            coll[i].deselect();
+                        }
                     }
                     board.deselect();
                     board.setSelected(this);
@@ -46,7 +53,12 @@ public class Square {
                         Square from = board.getSelected();
                         Square to = this;
                         if (from.getPiece() != null) {
-                            from.getPiece().getPossibleMoves().stream().forEach((square) -> {square.deselect();});
+                            //from.getPiece().getPossibleMoves().stream().forEach((square) -> {square.deselect();});
+                            Square[] coll= (Square[]) from.getPiece().getPossibleMoves().toArray();
+                            for (int i=0;i<coll.length;i++)
+                            {
+                                coll[i].deselect();
+                            }
                         }
                         board.move(from, to);
                         from.deselect();
