@@ -2,9 +2,10 @@
 package chess.microdev.devfest.tn.chess.game.pieces;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public final class Board {
+public final class Board implements Serializable{
 
     private ArrayList<Piece> pieces;
     private ArrayList<Piece> whitePieces;

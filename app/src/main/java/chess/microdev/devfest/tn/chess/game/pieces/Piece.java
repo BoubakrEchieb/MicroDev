@@ -1,9 +1,10 @@
 package chess.microdev.devfest.tn.chess.game.pieces;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 
-public abstract class Piece {
+public abstract class Piece implements Serializable{
 
     private final PieceType pieceType;
     private final PieceColor pieceColor;
