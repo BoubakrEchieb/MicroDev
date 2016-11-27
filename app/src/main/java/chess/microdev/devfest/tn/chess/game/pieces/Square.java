@@ -78,6 +78,39 @@ public class Square {
     public Square neighbour(int row, int column) {
         return board.getSquare(ROW + row, COLUMN + column);
     }
+    public String toString() {
+        String a="";
+        switch (COLUMN)
+        {
+            case 0 :
+                a+="a";
+                break;
+            case 1 :
+                a+="b";
+                break;
+            case 2 :
+                a+="c";
+                break;
+            case 3 :
+                a+="d";
+                break;
+            case 4 :
+                a+="e";
+                break;
+            case 5 :
+                a+="f";
+                break;
+            case 6 :
+                a+="g";
+                break;
+            case 7 :
+                a+="h";
+                break;
+
+        }
+        a+="_"+(ROW+1);
+        return a;
+    }
 
     public Square getBoardSquare(int row, int column) {
         return board.getSquare(row, column);
@@ -97,7 +130,6 @@ public class Square {
         this.piece.setSquare(this);
         this.piece.generatePossibleMoves();
     }
-
     public void removePiece() {
         piece = null;
     }
