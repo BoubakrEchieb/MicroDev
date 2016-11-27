@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class CheeseListFragment extends Fragment {
+public class FreindsFragment extends Fragment {
 
     @Nullable
     @Override

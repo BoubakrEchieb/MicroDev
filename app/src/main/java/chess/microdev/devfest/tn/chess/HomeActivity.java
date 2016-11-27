@@ -22,8 +22,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,9 +129,9 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CheeseListFragment(), "Find Games");
-        adapter.addFragment(new CheeseListFragment(), "Friends");
-        //adapter.addFragment(new CheeseListFragment(), "Category 3");
+        adapter.addFragment(new GamesFragment(), "Find Games");
+        adapter.addFragment(new FreindsFragment(), "Friends");
+        //adapter.addFragment(new FreindsFragment(), "Category 3");
         viewPager.setAdapter(adapter);
     }
 
