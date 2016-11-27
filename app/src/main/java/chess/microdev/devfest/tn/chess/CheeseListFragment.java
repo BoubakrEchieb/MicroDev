@@ -62,6 +62,8 @@ public class CheeseListFragment extends Fragment {
         return list;
     }
 
+
+
     public static class SimpleStringRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
 
