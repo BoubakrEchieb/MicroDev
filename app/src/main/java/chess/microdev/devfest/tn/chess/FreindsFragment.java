@@ -50,15 +50,12 @@ public class FreindsFragment extends Fragment {
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 3)));
+                getRandomSublist(null)));
     }
 
-    private List<String> getRandomSublist(String[] array, int amount) {
-        ArrayList<String> list = new ArrayList<>(amount);
-        Random random = new Random();
-        while (list.size() < amount) {
-            list.add(array[random.nextInt(array.length)]);
-        }
+    private List<String> getRandomSublist(String[] array) {
+        ArrayList<String> list = new ArrayList<>();
+
         return list;
     }
 
@@ -118,15 +115,15 @@ public class FreindsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Context context = v.getContext();
-                    Intent intent = new Intent(context, CheeseDetailActivity.class);
-                    intent.putExtra(CheeseDetailActivity.EXTRA_NAME, holder.mBoundString);
+                    Intent intent = new Intent(context, BoardActivity.class);
+                    intent.putExtra("friend", holder.mBoundString);
 
                     context.startActivity(intent);
                 }
             });
 
             Glide.with(holder.mImageView.getContext())
-                    .load(Cheeses.getRandomCheeseDrawable())
+                    .load(R.drawable.b_b)
                     .fitCenter()
                     .into(holder.mImageView);
         }
