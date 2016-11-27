@@ -12,9 +12,12 @@
 
         </activity>
         <activity android:name=".SignupActivity" />
+        <activity android:name=".CheeseDetailActivity" />
+        <activity android:name=".BoardActivity" />
+
         <activity
-            android:name=".BoardActivity"
-            android:label="@string/title_activity_board"
+            android:name=".HomeActivity"
+            android:label="Home"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
